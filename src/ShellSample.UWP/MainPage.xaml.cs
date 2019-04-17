@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,7 @@ namespace ShellSample.UWP
         public MainPage()
         {
             var titleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+            ApplicationView appView = ApplicationView.GetForCurrentView();
             titleBar.ExtendViewIntoTitleBar = false;
             //LoadApplication(new ShellSample.App());
             LoadApplication(new Gastropod.App());

@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+  </PropertyGroup>
+
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.props" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="LiveXAML" Version="2.1.70" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Scenarios\" />
+    <Folder Include="Services\" />
+    <Folder Include="Styles\" />
+    <Folder Include="ControlGallery\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ApiConstants.cs" />
+  </ItemGroup>
+  <Import Project="..\ApiConstants.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
+    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Maps\Xamarin.Forms.Maps.csproj" />
+    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
+    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
+  </ItemGroup>
+
+  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.targets" />
+</Project>
