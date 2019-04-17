@@ -25,6 +25,8 @@ namespace ShellSample.UWP
     {
         public MainPage()
         {
+            var titleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+            titleBar.ExtendViewIntoTitleBar = false;
             //LoadApplication(new ShellSample.App());
             LoadApplication(new Gastropod.App());
         }

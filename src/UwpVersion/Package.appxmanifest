@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="c1dd837a-ce04-4beb-a823-76d2933e60b6"
+    Name="d319770d-e039-4677-b84a-2fb93eddb3a8"
     Publisher="CN=mn"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="c1dd837a-ce04-4beb-a823-76d2933e60b6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d319770d-e039-4677-b84a-2fb93eddb3a8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ShellSample.UWP</DisplayName>
+    <DisplayName>Gastropods</DisplayName>
     <PublisherDisplayName>mn</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="ShellSample.UWP.App">
+      EntryPoint="UwpVersion.App">
       <uap:VisualElements
-        DisplayName="Gastropods - Shell sample on UWP"
+        DisplayName="Gastropods"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="ShellSample.UWP"
+        Description="UwpVersion"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
