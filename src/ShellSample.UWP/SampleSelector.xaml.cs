@@ -24,6 +24,8 @@ namespace ShellSample.UWP
     {
         public SampleSelector()
         {
+            var titleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+            titleBar.ExtendViewIntoTitleBar = false;
             this.InitializeComponent();
         }
 
