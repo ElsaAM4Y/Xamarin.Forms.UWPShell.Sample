@@ -26,11 +26,25 @@ namespace ShellSample.UWP
     {
         public MainPage()
         {
-            var titleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var app = e.Parameter as Xamarin.Forms.Application;
+            LoadApplication(app);
             ApplicationView appView = ApplicationView.GetForCurrentView();
-            titleBar.ExtendViewIntoTitleBar = false;
-            //LoadApplication(new ShellSample.App());
-            LoadApplication(new Gastropod.App());
+            string title = app.MainPage.Title;
+            if (string.IsNullOrEmpty(title))
+            {
+                title = app.GetType().Namespace;
+            }
+            appView.Title = title;
+            base.OnNavigatedTo(e);
+        }
+
+        private void DefaultShell_Click(object sender, RoutedEventArgs e)
+        {
+            StartApplication(new ShellSample.App());
         }
     }
 }

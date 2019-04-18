@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="ShellSample.UWP.App">
       <uap:VisualElements
-        DisplayName="Gastropods - Shell sample on UWP"
+        DisplayName="Shell sample on UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ShellSample.UWP"
