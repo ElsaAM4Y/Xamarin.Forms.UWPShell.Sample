@@ -41,10 +41,5 @@ namespace ShellSample.UWP
             appView.Title = title;
             base.OnNavigatedTo(e);
         }
-
-        private void DefaultShell_Click(object sender, RoutedEventArgs e)
-        {
-            StartApplication(new ShellSample.App());
-        }
     }
 }
