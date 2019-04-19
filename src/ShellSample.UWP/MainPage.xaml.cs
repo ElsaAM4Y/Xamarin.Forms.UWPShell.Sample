@@ -32,6 +32,9 @@ namespace ShellSample.UWP
         {
             var app = e.Parameter as Xamarin.Forms.Application;
             LoadApplication(app);
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+                Windows.UI.Core.AppViewBackButtonVisibility.Visible;
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
             ApplicationView appView = ApplicationView.GetForCurrentView();
             string title = app.MainPage.Title;
             if (string.IsNullOrEmpty(title))
@@ -40,6 +43,15 @@ namespace ShellSample.UWP
             }
             appView.Title = title;
             base.OnNavigatedTo(e);
+        }
+
+        private void MainPage_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+        {
+            if (!e.Handled && Frame.CanGoBack)
+            {
+                e.Handled = true;
+                Frame.GoBack();
+            }
         }
     }
 }
