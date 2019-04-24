@@ -5,7 +5,12 @@
     <ProduceAssemblyReference>true</ProduceAssemblyReference>
   </PropertyGroup>
 
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.props"/>
+  <!-- Settings to make it work with project refs -->
+  <PropertyGroup>
+    <XFDisableTargetsValidation>True</XFDisableTargetsValidation>
+  </PropertyGroup>
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
 
   <ItemGroup>
     <Compile Remove="FlyoutHeader.xaml.cs" />
@@ -31,10 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Settings to make it work with project refs -->
+    <ProjectReference ReferenceOutputAssembly="False" Include="..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\Xamarin.Forms.Build.Tasks.csproj" />
+
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
   </ItemGroup>
 
-  <Import Project="$(USERPROFILE)\.nuget\packages\xamarin.forms\4.0.0.8055-pre1\build\Xamarin.Forms.targets" />
+  <!-- Settings to make it work with project refs -->
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" />
+
 </Project>
