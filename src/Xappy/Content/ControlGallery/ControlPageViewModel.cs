@@ -67,7 +67,7 @@ namespace Xappy.ControlGallery
         private async void ViewXAML()
         {
             var source = XamlUtil.GetXamlForType(typeof(ControlPage));
-            await Shell.CurrentShell.Navigation.PushAsync(new ViewSourcePage
+            await Shell.Current.Navigation.PushAsync(new ViewSourcePage
             {
                 Source = source
             });

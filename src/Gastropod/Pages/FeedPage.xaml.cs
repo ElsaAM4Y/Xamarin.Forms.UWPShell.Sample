@@ -25,7 +25,7 @@ namespace Gastropod
     {
         public FeedSearchHandler()
         {
-            SearchBoxVisibility = SearchBoxVisiblity.Expanded;
+            SearchBoxVisibility = SearchBoxVisibility.Expanded;
             IsSearchEnabled = true;
             ShowsResults = true;
             Placeholder = "Find a seashell...";

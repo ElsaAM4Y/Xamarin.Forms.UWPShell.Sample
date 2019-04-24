@@ -59,7 +59,7 @@ namespace Xappy.ControlGallery
             if (SelectedControl == null)
                 return;
 
-            await Shell.CurrentShell.GoToAsync($"control?control={SelectedControl.Title}");
+            await Shell.Current.GoToAsync($"control?control={SelectedControl.Title}");
 
             SelectedControl = null;
         }
