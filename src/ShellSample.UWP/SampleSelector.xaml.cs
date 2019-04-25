@@ -43,5 +43,10 @@ namespace ShellSample.UWP
         {
             Frame.Navigate(typeof(MainPage), new Xappy.App());
         }
+
+        private void Gallery_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), new Xamarin.Forms.Controls.App());
+        }
     }
 }

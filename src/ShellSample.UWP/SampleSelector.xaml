@@ -14,6 +14,7 @@
             <Button Content="Default Shell Template" Click="DefaultShell_Click" HorizontalAlignment="Stretch" Margin="10" />
             <Button Content="Gastropods" Click="GastroPods_Click" HorizontalAlignment="Stretch" Margin="10" />
             <Button Content="Xappy" Click="Xappy_Click" HorizontalAlignment="Stretch" Margin="10" />
+            <Button Content="Controls Gallery" Click="Gallery_Click" HorizontalAlignment="Stretch" Margin="10" />
         </StackPanel>
 
     </Grid>

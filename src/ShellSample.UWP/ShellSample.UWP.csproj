@@ -123,6 +123,8 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarValidationService.cs" />
+    <Compile Include="SampleNativeControl.cs" />
     <Compile Include="SampleSelector.xaml.cs">
       <DependentUpon>SampleSelector.xaml</DependentUpon>
     </Compile>
@@ -148,7 +150,27 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="scale-100\bell.png" />
+    <Content Include="scale-100\books.png" />
+    <Content Include="scale-100\booksflyout.png" />
+    <Content Include="scale-100\film.png" />
+    <Content Include="scale-100\filmflyout.png" />
+    <Content Include="scale-100\games.png" />
+    <Content Include="scale-100\gamesflyout.png" />
+    <Content Include="scale-100\gear.png" />
+    <Content Include="scale-100\grid.png" />
+    <Content Include="scale-100\headphone.png" />
+    <Content Include="scale-100\headphoneflyout.png" />
+    <Content Include="scale-100\home.png" />
+    <Content Include="scale-100\homeflyout.png" />
+    <Content Include="scale-100\loop.png" />
+    <Content Include="scale-100\newspaper.png" />
+    <Content Include="scale-100\newspaperflyout.png" />
+    <Content Include="scale-100\person.png" />
+    <Content Include="scale-100\star-flyout.png" />
+    <Content Include="scale-100\star.png" />
     <Content Include="shells_01.jpg" />
+    <Content Include="xamarinstore.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -176,6 +198,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Controls\Xamarin.Forms.Controls.csproj">
+      <Project>{4752e3d4-eeef-4bca-b841-0a3828a68382}</Project>
+      <Name>Xamarin.Forms.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj">
       <Project>{ccefb0b4-2eca-4c14-811c-1838342f69e1}</Project>
       <Name>Xamarin.Forms.Core</Name>
