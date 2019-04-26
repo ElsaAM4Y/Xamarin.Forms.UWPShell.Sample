@@ -136,11 +136,15 @@
     <None Include="ShellSample.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bank.png" />
+    <Content Include="calculator.png" />
+    <Content Include="coffee.png" />
     <Content Include="gear.png" />
     <Content Include="grid.png" />
     <Content Include="home.png" />
     <Content Include="homeflyout.png" />
     <Content Include="iconXamarin.png" />
+    <Content Include="menuIcon.png" />
     <Content Include="photo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -169,7 +173,9 @@
     <Content Include="scale-100\person.png" />
     <Content Include="scale-100\star-flyout.png" />
     <Content Include="scale-100\star.png" />
+    <Content Include="seth.png" />
     <Content Include="shells_01.jpg" />
+    <Content Include="toolbar_close.png" />
     <Content Include="xamarinstore.jpg" />
   </ItemGroup>
   <ItemGroup>
