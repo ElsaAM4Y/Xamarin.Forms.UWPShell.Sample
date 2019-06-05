@@ -13,7 +13,8 @@ namespace Gastropod
         public FeedPage()
         {
             InitializeComponent();
-            Shell.SetShellTitleColor(this, Color.Blue);
+
+            Shell.SetTitleColor(this, Color.Blue);
             Shell.SetSearchHandler(this, new FeedSearchHandler());
             Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             Title = "Gastropods";
@@ -29,6 +30,8 @@ namespace Gastropod
             IsSearchEnabled = true;
             ShowsResults = true;
             Placeholder = "Find a seashell...";
+            CancelButtonColor = Color.White;
+            TextColor = Color.White;
         }
 
         protected override void OnQueryChanged(string oldValue, string newValue)
@@ -51,5 +54,12 @@ namespace Gastropod
     {
         public string Text { get; set; }
         public string Description { get; set; }
+        public string Image
+        {
+            get
+            {
+                return $"https://loremflickr.com/320/240/{Text}%20shell";
+            }
+        }
     }
 }

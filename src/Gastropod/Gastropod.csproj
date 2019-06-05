@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <!-- Settings to make it work with project refs -->
@@ -13,17 +13,26 @@
   <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
 
   <ItemGroup>
+    <PackageReference Include="LiveXAML" Version="2.1.72" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="FlyoutHeader.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="FlyoutHeader.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Images\*.*" />
+    <None Remove="Images\photo.png" />
+    <None Remove="Images\shells_01.jpg" />
+    <None Remove="Images\shell_01.jpg" />
+    <None Remove="Images\snail_01.jpg" />
     <None Remove="ViewModels\CameraViewModel.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\*.*" />
+    <EmbeddedResource Include="Images\photo.png" />
+    <EmbeddedResource Include="Images\shells_01.jpg" />
+    <EmbeddedResource Include="Images\shell_01.jpg" />
+    <EmbeddedResource Include="Images\snail_01.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Styles\" />
@@ -34,14 +43,22 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <!-- Settings to make it work with project refs -->
     <ProjectReference ReferenceOutputAssembly="False" Include="..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\Xamarin.Forms.Build.Tasks.csproj" />
-
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pages\LoginPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppShell.xaml.cs">
+      <DependentUpon>AppShell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <!-- Settings to make it work with project refs -->
