@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <!-- Settings to make it work with project refs -->
@@ -13,33 +13,83 @@
   <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
 
   <ItemGroup>
+    <!--<PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.1.1.1-beta" />-->
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
-    <PackageReference Include="LiveXAML" Version="2.1.70" />
+    <PackageReference Include="Octokit" Version="0.32.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <!--<PackageReference Include="Xamarin.HotReload" Version="1.2.9" />-->
   </ItemGroup>
-  
   <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Pages\Scenarios\" />
-    <Folder Include="Services\" />
-    <Folder Include="Styles\" />
-    <Folder Include="ControlGallery\" />
+    <Page Update="**\*.xaml">
+      <Generator></Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\ControlGallery\" />
+    <Folder Include="Content\LatestNews\" />
+    <Folder Include="Content\ControlGallery\ProppyControls\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Domain\Global\" />
+    <Folder Include="Content\Settings\" />
+    <Folder Include="Content\Scenarios\ToDo\" />
+    <Folder Include="Content\About\" />
+    <Folder Include="Content\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ApiConstants.cs" />
+    <Compile Update="Content\ControlGallery\ControlTemplates\Button.xaml.cs">
+      <DependentUpon>ButtonControlTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Content\Scenarios\Conversation\ConversationPage.xaml.cs">
+      <DependentUpon>ConversationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Remove="Content\ControlGallery\ProppyControls\BasePropertyControl.cs" />
   </ItemGroup>
-  <Import Project="..\ApiConstants.targets" />
-
   <ItemGroup>
     <!-- Settings to make it work with project refs -->
     <ProjectReference ReferenceOutputAssembly="False" Include="..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\Xamarin.Forms.Build.Tasks.csproj" />
-
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Maps\Xamarin.Forms.Maps.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Platform\Xamarin.Forms.Platform.csproj" />
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Xaml\Xamarin.Forms.Xaml.csproj" />
   </ItemGroup>
-
+  <!--<ItemGroup>
+    <Page Include="Content\ControlGallery\ControlTemplates\ButtonControlTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Page>
+    <Page Include="Content\ControlGallery\ProppyControls\MarginProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Page>
+    <Page Include="Content\ControlGallery\ProppyControls\PaddingProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Page>
+    <Page Include="Content\ControlGallery\ProppyControls\TextEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Page>
+    <Page Include="Content\ControlGallery\ProppyControls\Toolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Page>
+  </ItemGroup>-->
+  <ItemGroup>
+    <EmbeddedResource Include="AppVersionInfo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="CustomViews\BorderlessEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AppVersionInfo.json" />
+  </ItemGroup>
+  <Import Project="..\ApiConstants.targets" />
   <!-- Settings to make it work with project refs -->
   <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" />
-
 </Project>
